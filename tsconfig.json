@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "types": ["p5/global"]
+    "types": ["p5/global"],
+    "target": "ES2015",
+    "experimentalDecorators": true
   }
 }

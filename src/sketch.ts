@@ -1,12 +1,21 @@
+import SituationCard from "./display/components/SituationCard";
+
+let card: SituationCard;
+
 function setup() {
-  createCanvas(400, 400, WEBGL);
+  createCanvas(800, 600, WEBGL);
+  card = new SituationCard(200, 300);
+  card.hide("TOP", false);
+  card.setRotate(random(-1, 1) * (HALF_PI / 20), false);
+  setInterval(() => {
+    card.show();
+    card.flip("LEFT");
+  }, 1000);
 }
 
 function draw() {
   background(220);
-  rotateY(millis() / 400);
-  rectMode(CENTER);
-  rect(0, 0, 200, 200);
+  card.display();
 }
 
 window.setup = setup;
