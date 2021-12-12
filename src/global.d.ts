@@ -4,6 +4,7 @@ declare module "p5-global" {
       preload: () => void;
       setup: () => void;
       draw: () => void;
+      mousePressed: () => void;
     }
   }
 }

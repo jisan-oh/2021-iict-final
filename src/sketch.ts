@@ -1,4 +1,5 @@
 import SituationCard from "./display/components/SituationCard";
+import { ClickableManager } from "./display/base/Clickable";
 
 let card: SituationCard;
 
@@ -7,6 +8,7 @@ function setup() {
   card = new SituationCard(200, 300);
   card.hide("TOP", false);
   card.setRotate(random(-1, 1) * (HALF_PI / 20), false);
+  ClickableManager.add(card);
   setInterval(() => {
     card.show();
     card.flip("LEFT");
@@ -15,8 +17,14 @@ function setup() {
 
 function draw() {
   background(220);
+  ClickableManager.listenHover();
   card.display();
+}
+
+function mousePressed() {
+  ClickableManager.listenClick();
 }
 
 window.setup = setup;
 window.draw = draw;
+window.mousePressed = mousePressed;
