@@ -16,9 +16,9 @@ function Flippable<TBase extends Constructor>(Base: TBase) {
       rectMode(CENTER);
       const xValue = this.fXBase.getValue();
       const yValue = this.fYBase.getValue();
-      const xBump = abs(sin(xValue * PI)) * (this.height / 2);
-      const yBump = abs(sin(yValue * PI)) * (this.width / 2);
-      translate(0, 0, max(xBump, yBump));
+      const xBump = Math.abs(Math.sin(xValue * PI)) * (this.height / 2);
+      const yBump = Math.abs(Math.sin(yValue * PI)) * (this.width / 2);
+      translate(0, 0, Math.max(xBump, yBump));
       rotateX(xValue * PI);
       rotateY(yValue * PI);
     }

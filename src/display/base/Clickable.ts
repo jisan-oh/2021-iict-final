@@ -4,8 +4,9 @@ type Constructor = new (...args: any[]) => Movable;
 
 function Clickable<TBase extends Constructor>(Base: TBase) {
   return class Clickable extends Base {
-    constructor(...args: any[]) {
-      super(args);
+    protected position() {
+      super.position();
+      rectMode(CENTER);
     }
 
     display() {

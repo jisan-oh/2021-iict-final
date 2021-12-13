@@ -27,7 +27,7 @@ declare module "*.png" {
 
 declare module "p5" {
   interface p5InstanceExtensions {
-    textWrap(value: any);
+    textWrap(value: any): void;
   }
 }
 

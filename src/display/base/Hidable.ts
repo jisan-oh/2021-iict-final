@@ -50,6 +50,13 @@ function Hidable<TBase extends Constructor>(Base: TBase) {
       this.hXBase.setValue(0, transition);
       this.hYBase.setValue(0, transition);
     }
+
+    isHiding() {
+      return (
+        Math.abs(this.hXBase.getValue()) === 1 ||
+        Math.abs(this.hYBase.getValue()) === 1
+      );
+    }
   };
 }
 

@@ -18,6 +18,6 @@ export type Question = {
   emoji: string;
   text: string;
   answers?: Answer[];
-  preEffect?: Effect[];
-  postEffect?: Effect[];
+  preEffects?: Effect[];
+  postEffects?: Effect[];
 };

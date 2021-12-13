@@ -6,11 +6,13 @@ function pushPop(
   const original = descriptor.value;
 
   descriptor.value = function (...args) {
-    push();
-    const result = original.apply(this, args);
-    pop();
+    if (original) {
+      push();
+      const result = original.apply(this, args);
+      pop();
 
-    return result;
+      return result;
+    }
   };
 }
 

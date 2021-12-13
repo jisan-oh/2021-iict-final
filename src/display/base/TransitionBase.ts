@@ -47,7 +47,7 @@ class TransitionBase {
   move() {
     if (this.amount !== 0) {
       if (this.progress < 1) {
-        this.progress = min(this.progress + this.speed, 1);
+        this.progress = Math.min(this.progress + this.speed, 1);
       } else {
         this.endTransition();
       }

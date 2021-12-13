@@ -1,6 +1,6 @@
 class Character {
   name: string;
-  _burden = 0;
+  private burden = 0;
   burdenLimit: number;
 
   constructor(name: string, burdenLimit: number) {
@@ -8,9 +8,13 @@ class Character {
     this.burdenLimit = burdenLimit;
   }
 
-  set burden(burden: number) {
-    this._burden = burden;
-    if (this._burden >= this.burdenLimit) {
+  getBurden() {
+    return this.burden;
+  }
+
+  addBurden(amount: number) {
+    this.burden = Math.max(0, this.burden + amount);
+    if (this.burden >= this.burdenLimit) {
       this.onRetire();
     }
   }

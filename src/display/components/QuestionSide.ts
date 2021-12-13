@@ -9,8 +9,8 @@ const questionY = 90;
 const questionPadding = 20;
 
 class QuestionSide extends CardSide {
-  private emoji: string;
-  private question: string;
+  private emoji?: string;
+  private question?: string;
 
   set(emoji: string, question: string) {
     this.emoji = emoji;

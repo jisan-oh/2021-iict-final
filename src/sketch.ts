@@ -14,7 +14,16 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  push();
+  translate(0, 0, -100);
+  image(
+    ImageManager.background,
+    -width / 2 - 80,
+    -height / 2 - 80,
+    width + 160,
+    height + 160
+  );
+  pop();
   ClickableManager.listenHover();
   LayoutManager.display();
 }
@@ -27,11 +36,3 @@ window.preload = preload;
 window.setup = setup;
 window.draw = draw;
 window.mousePressed = mousePressed;
-
-// hot reloading
-
-if (module.hot) {
-  module.hot.accept(() => {
-    setup();
-  });
-}

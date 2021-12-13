@@ -8,35 +8,52 @@ import ResultSide from "./ResultSide";
 import BackSide from "./BackSide";
 import CardSide from "./CardSide";
 import Clickable from "../base/Clickable";
+import { Question } from "../../types/GameType";
 
 const cardWidth = 200;
 const cardHeight = 300;
 
 class QuestionCard extends Clickable(Rotatable(Flippable(Hidable(Movable)))) {
-  protected width = cardWidth;
-  protected height = cardHeight;
+  static backSide: BackSide;
+
   private readonly questionSide = new QuestionSide(cardWidth, cardHeight);
   private readonly resultSide = new ResultSide(cardWidth, cardHeight);
-  private readonly backSide = new BackSide(cardWidth, cardHeight);
-  private front: CardSide;
-  private back: CardSide;
+  private front?: CardSide;
+  private back?: CardSide;
+  question: Question;
 
-  setQuestion(emoji: string, question: string) {
+  constructor(question: Question) {
+    super(cardWidth, cardHeight);
     this.front = this.questionSide;
-    this.questionSide.set(emoji, question);
+    this.questionSide.set(question.emoji, question.text);
+    this.question = question;
+    this.questionSide.draw();
   }
 
-  setResult(result: string) {
+  static initBackSide() {
+    this.backSide = new BackSide(cardWidth, cardHeight);
+    this.backSide.draw();
+  }
+
+  setResult(text: string, burdenResult?: string) {
     this.back = this.resultSide;
-    this.resultSide.set(result);
+    this.resultSide.set(text, burdenResult);
+    this.resultSide.draw();
   }
 
   prepareBack() {
     if (this.side === "FRONT") {
-      this.back = this.backSide;
+      this.back = QuestionCard.backSide;
     } else {
-      this.front = this.backSide;
+      this.front = QuestionCard.backSide;
     }
+  }
+
+  isShowingBack() {
+    return (
+      (this.side === "FRONT" && this.front === QuestionCard.backSide) ||
+      (this.side === "BACK" && this.back === QuestionCard.backSide)
+    );
   }
 
   @pushPop
@@ -45,7 +62,6 @@ class QuestionCard extends Clickable(Rotatable(Flippable(Hidable(Movable)))) {
     noStroke();
 
     if (this.front) {
-      this.front.draw();
       texture(this.front.texture);
     }
 
@@ -53,7 +69,6 @@ class QuestionCard extends Clickable(Rotatable(Flippable(Hidable(Movable)))) {
     rect(0, 0, this.width, this.height);
 
     if (this.back) {
-      this.back.draw();
       texture(this.back.texture);
     }
 

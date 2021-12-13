@@ -19,7 +19,7 @@
     {
       "emoji": "👥",
       "text": "왼쪽 위에 같이 팀플할 조원들이 보이네요.",
-      "preEffect": ["showCharacters"]
+      "preEffects": ["showCharacters"]
     },
     {
       "emoji": "😙",
@@ -54,12 +54,12 @@
     {
       "emoji": "👏",
       "text": "팀원들의 탈주를 막으면서 20일 동안 팀플을 진행하면 당신의 승리입니다.",
-      "preEffect": ["showScore"]
+      "preEffects": ["showScore"]
     },
     {
       "emoji": "🥰",
       "text": "그럼 시작합니다.",
-      "postEffect": ["reset", "countScore"]
+      "postEffects": ["reset", "countScore"]
     }
   ],
   "main": [

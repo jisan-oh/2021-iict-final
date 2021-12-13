@@ -7,7 +7,7 @@ abstract class CardSide {
     this.texture = createGraphics(width, height);
   }
 
-  abstract draw();
+  abstract draw(): void;
 }
 
 export default CardSide;
