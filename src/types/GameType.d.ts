@@ -3,7 +3,11 @@ export type Effect =
   | "showScore"
   | "reset"
   | "countScore"
-  | "stopCountScore";
+  | "stopCountScore"
+  | "startMain"
+  | "startInterlude"
+  | "addTryCount"
+  | "startOutro";
 
 export type Target = "pm" | "developer" | "designer";
 

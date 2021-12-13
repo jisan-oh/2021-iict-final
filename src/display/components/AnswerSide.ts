@@ -4,7 +4,7 @@ import { Image } from "p5";
 const textSize = 16;
 const textLeading = 24;
 const textY = 30;
-const textPadding = 20;
+const textPadding = 15;
 
 class AnswerSide extends CardSide {
   background?: Image;

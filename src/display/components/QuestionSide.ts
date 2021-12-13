@@ -9,10 +9,11 @@ const questionY = 90;
 const questionPadding = 20;
 
 class QuestionSide extends CardSide {
-  private emoji?: string;
-  private question?: string;
+  private readonly emoji: string;
+  private readonly question: string;
 
-  set(emoji: string, question: string) {
+  constructor(width: number, height: number, emoji: string, question: string) {
+    super(width, height);
     this.emoji = emoji;
     this.question = question;
   }

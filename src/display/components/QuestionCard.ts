@@ -16,7 +16,7 @@ const cardHeight = 300;
 class QuestionCard extends Clickable(Rotatable(Flippable(Hidable(Movable)))) {
   static backSide: BackSide;
 
-  private readonly questionSide = new QuestionSide(cardWidth, cardHeight);
+  private readonly questionSide;
   private readonly resultSide = new ResultSide(cardWidth, cardHeight);
   private front?: CardSide;
   private back?: CardSide;
@@ -24,10 +24,16 @@ class QuestionCard extends Clickable(Rotatable(Flippable(Hidable(Movable)))) {
 
   constructor(question: Question) {
     super(cardWidth, cardHeight);
-    this.front = this.questionSide;
-    this.questionSide.set(question.emoji, question.text);
-    this.question = question;
+    this.questionSide = new QuestionSide(
+      cardWidth,
+      cardHeight,
+      question.emoji,
+      question.text
+    );
     this.questionSide.draw();
+    this.question = question;
+
+    this.front = this.questionSide;
   }
 
   static initBackSide() {

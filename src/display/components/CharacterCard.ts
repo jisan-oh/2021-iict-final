@@ -13,17 +13,21 @@ const cardHeight = 50;
 class CharacterCard extends Flippable(Hidable(Movable)) {
   static characterEndSide: CharacterEndSide;
 
-  private readonly characterSide = new CharacterSide(cardWidth, cardHeight);
-  character: Character;
+  private readonly characterSide;
 
   constructor(character: Character, background: Image) {
     super(cardWidth, cardHeight);
-    this.character = character;
-    this.characterSide.background = background;
+    this.characterSide = new CharacterSide(
+      cardWidth,
+      cardHeight,
+      background,
+      character
+    );
   }
 
   static initEndSide() {
     this.characterEndSide = new CharacterEndSide(cardWidth, cardHeight);
+    this.characterEndSide.draw();
   }
 
   @pushPop
@@ -39,7 +43,7 @@ class CharacterCard extends Flippable(Hidable(Movable)) {
 
     texture(CharacterCard.characterEndSide.texture);
 
-    rotateY(PI);
+    rotateX(PI);
     translate(0, 0, 0.1);
     rect(0, 0, this.width, this.height);
   }

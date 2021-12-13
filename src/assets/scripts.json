@@ -53,12 +53,13 @@
     },
     {
       "emoji": "👏",
-      "text": "팀원들의 탈주를 막으면서 20일 동안 팀플을 진행하면 당신의 승리입니다.",
+      "text": "팀원들의 탈주를 막으면서 15일 동안 팀플을 진행하면 당신의 승리입니다.",
       "preEffects": ["showScore"]
     },
     {
       "emoji": "🥰",
       "text": "그럼 시작합니다.",
+      "preEffects": ["startMain"],
       "postEffects": ["reset", "countScore"]
     }
   ],
@@ -259,19 +260,95 @@
   "outro": [
     {
       "emoji": "🤔",
-      "text": "엔딩 추가해야 함"
+      "text": "엔딩 추가해야 함",
+      "preEffects": ["stopCountScore"]
+    }
+  ],
+  "interlude1": [
+    {
+      "emoji": "🤔",
+      "text": "이런... 팀플이 폭파되었군요."
+    },
+    {
+      "emoji": "🤗",
+      "text": "하지만 기죽지 마세요. 정문과에서 이런 고생길은 숱하게 열리는 것 아니겠어요?"
+    },
+    {
+      "emoji": "🏃",
+      "text": "당신은 다음 학기에도 이름 모를 정문과 수업을 듣고, 팀플을 하게 됩니다."
+    },
+    {
+      "emoji": "🙋",
+      "text": "안녕하세요. 어디서 많이 본 팀 구성인데... 저희 다시 시작해 볼까요?",
+      "preEffects": ["startMain"],
+      "postEffects": ["addTryCount", "reset", "countScore"]
+    }
+  ],
+  "interlude2": [
+    {
+      "emoji": "👀",
+      "text": "또 팀플이 터졌군요."
+    },
+    {
+      "emoji": "🤗",
+      "text": "걱정하지 마세요. 들어야 하는 정문과 수업이 많다면, 팀플을 할 기회도 많이 남았습니다."
+    },
+    {
+      "emoji": "🏃",
+      "text": "당신은 다음 학기에도 이름 모를 정문과 수업을 듣게 됩니다. 시작해 볼까요?",
+      "preEffects": ["startMain"],
+      "postEffects": ["addTryCount", "reset", "countScore"]
+    }
+  ],
+  "interlude3": [
+    {
+      "emoji": "😌",
+      "text": "3학기 내리 팀플이 터졌군요. 그럴 수 있죠."
+    },
+    {
+      "emoji": "🥱",
+      "text": "당신은 다음 학기에도 이름 모를 정문과 수업을 듣고... 하품해서 미안해요. 시작해 볼까요?",
+      "preEffects": ["startMain"],
+      "postEffects": ["addTryCount", "reset", "countScore"]
+    }
+  ],
+  "interlude4": [
+    {
+      "emoji": "🧐",
+      "text": "......"
+    },
+    {
+      "emoji": "😅",
+      "text": "아 죄송해요. 팀플마다 왜 저렇게 끝나는지 모르겠어서... 특이한 경험을 하고 계시네요. 가시죠.",
+      "preEffects": ["startMain"],
+      "postEffects": ["addTryCount", "reset", "countScore"]
+    }
+  ],
+  "interlude5": [
+    {
+      "emoji": "😇",
+      "text": "이번 학기도 아쉽게 됐네요."
+    },
+    {
+      "emoji": "🤠",
+      "text": "뭐 어쩔 수 없죠. 졸업은 해야 하지 않겠습니까. 다음 학기에는 운이 좋기를 바라볼까요?",
+      "preEffects": ["startMain"],
+      "postEffects": ["addTryCount", "reset", "countScore"]
     }
   ],
   "pmBadEnding": {
     "emoji": "🍃",
-    "text": "기획자는 연락이 두절되었고 그 후로 정문과 수업에서 기획자님을 다시 볼 수 없었습니다."
+    "text": "기획자는 연락이 두절되었고 그 후로 정문과 수업에서 기획자님을 다시 볼 수 없었습니다.",
+    "preEffects": ["stopCountScore", "startInterlude"]
   },
   "designerBadEnding": {
     "emoji": "🍃",
-    "text": "디자이너는 연락이 두절되었고 그 후로 정문과 수업에서 디자이너님을 다시 볼 수 없었습니다."
+    "text": "디자이너는 연락이 두절되었고 그 후로 정문과 수업에서 디자이너님을 다시 볼 수 없었습니다.",
+    "preEffects": ["stopCountScore", "startInterlude"]
   },
   "developerBadEnding": {
     "emoji": "🍃",
-    "text": "개발자는 연락이 두절되었고 그 후로 정문과 수업에서 개발자님을 다시 볼 수 없었습니다."
+    "text": "개발자는 연락이 두절되었고 그 후로 정문과 수업에서 개발자님을 다시 볼 수 없었습니다.",
+    "preEffects": ["stopCountScore", "startInterlude"]
   }
 }

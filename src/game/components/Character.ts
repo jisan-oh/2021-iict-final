@@ -1,6 +1,6 @@
 class Character {
   name: string;
-  private burden = 0;
+  burden = 0;
   burdenLimit: number;
 
   constructor(name: string, burdenLimit: number) {
@@ -8,18 +8,30 @@ class Character {
     this.burdenLimit = burdenLimit;
   }
 
-  getBurden() {
-    return this.burden;
-  }
-
   addBurden(amount: number) {
-    this.burden = Math.max(0, this.burden + amount);
+    this.burden = Math.max(0, Math.min(this.burden + amount, this.burdenLimit));
     if (this.burden >= this.burdenLimit) {
-      this.onRetire();
+      this.onRetireGame();
+      this.onRetireLayout();
     }
   }
 
-  onRetire() {
+  resetBurden() {
+    const prevBurden = this.burden;
+    this.burden = 0;
+    this.onResetLayout(prevBurden >= this.burdenLimit);
+  }
+
+  onRetireGame() {
+    // noop
+  }
+
+  onRetireLayout() {
+    // noop
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onResetLayout(restart: boolean) {
     // noop
   }
 }
