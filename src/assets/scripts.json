@@ -1,0 +1,277 @@
+{
+  "intro": [
+    {
+      "emoji": "👇",
+      "text": "여기를 클릭해 보시겠어요?"
+    },
+    {
+      "emoji": "🙋",
+      "text": "안녕하세요."
+    },
+    {
+      "emoji": "🙌",
+      "text": "극한팀플에 오신 걸 환영해요."
+    },
+    {
+      "emoji": "🧑‍💻",
+      "text": "당신은 이름 모를 정문과 수업을 듣게 되었습니다."
+    },
+    {
+      "emoji": "👥",
+      "text": "왼쪽 위에 같이 팀플할 조원들이 보이네요.",
+      "preEffect": ["showCharacters"]
+    },
+    {
+      "emoji": "😙",
+      "text": "저기 개발자에게 가서 인사해 볼까요?",
+      "answers": [
+        {
+          "text": "이 버튼 1px만 옮겨주시면 안 돼요?",
+          "result": "개발자가 힘들어합니다.",
+          "targets": ["developer"],
+          "burdenAmount": 1
+        },
+        {
+          "text": "이 버그 내일까지 고쳐주실 수 있을까요?",
+          "result": "개발자가 힘들어합니다.",
+          "targets": ["developer"],
+          "burdenAmount": 1
+        }
+      ]
+    },
+    {
+      "emoji": "😰",
+      "text": "앗... 친근한 인사였다고 생각했는데 아니었군요."
+    },
+    {
+      "emoji": "💁",
+      "text": "어떤 선택을 하느냐에 따라 캐릭터의 힘듦 지수가 올라갈 수 있어요."
+    },
+    {
+      "emoji": "💨",
+      "text": "힘듦 지수가 5점을 넘어가면 탈주할 수 있으니 주의하세요."
+    },
+    {
+      "emoji": "👏",
+      "text": "팀원들의 탈주를 막으면서 20일 동안 팀플을 진행하면 당신의 승리입니다.",
+      "preEffect": ["showScore"]
+    },
+    {
+      "emoji": "🥰",
+      "text": "그럼 시작합니다.",
+      "postEffect": ["reset", "countScore"]
+    }
+  ],
+  "main": [
+    {
+      "emoji": "💡",
+      "text": "내일이 발표인데, 개발자가 피그마로 보여주기로 한 프로토타입을 웹으로 만들면 어떻겠냐고 한다.",
+      "answers": [
+        {
+          "text": "하고 싶으면 하세요.",
+          "result": "당연히 완성 못했다. 버그 엄청 많아!",
+          "targets": ["developer"],
+          "burdenAmount": 3
+        },
+        {
+          "text": "개발자님이 너무 힘들지 않을까요?",
+          "result": "현명한 선택이었다."
+        }
+      ]
+    },
+    {
+      "emoji": "🍨",
+      "text": "밤샘 팀플하다가 간식을 사와서 나눠먹기로 했다. 배스킨라빈스에 간 조장. 어떤 맛을 골라야 할까?",
+      "answers": [
+        {
+          "text": "체리 쥬빌레",
+          "result": "개발자가 핑크색 부분에는 손을 대지 않는다.",
+          "targets": ["developer"],
+          "burdenAmount": 1
+        },
+        {
+          "text": "민트초코칩",
+          "result": "개발자가 민초만 다 먹었다.",
+          "targets": ["developer"],
+          "burdenAmount": -3
+        }
+      ]
+    },
+    {
+      "emoji": "🤷",
+      "text": "발표 직전에 게임이 끝나지 않는 버그가 발견됐다. 개발자에게 이 버그를 제보하니 자기 컴퓨터에서는 괜찮다는데...",
+      "answers": [
+        {
+          "text": "개발자님이 화면 공유해서 발표해 주세요.",
+          "result": "코드 설명에 발표 시간을 다 써 버렸다.",
+          "targets": ["pm", "designer"],
+          "burdenAmount": 2
+        },
+        {
+          "text": "기획자님 컴퓨터에서도 같은 버그가 나요.",
+          "result": "버그 맞네 맞아. 고치러 가자.",
+          "targets": ["developer"],
+          "burdenAmount": 2
+        }
+      ]
+    },
+    {
+      "emoji": "⚖️",
+      "text": "다음 주 회의 일정을 잡아보니 모두가 참가할 수 있는 날이 없다. 딱 한 명을 제외해야 한다면...",
+      "answers": [
+        {
+          "text": "디자이너",
+          "result": "기획은 했는데 디자인에 하나도 반영할 수가 없었다.",
+          "targets": ["designer"],
+          "burdenAmount": 1
+        },
+        {
+          "text": "개발자",
+          "result": "아 그럼 저는 코딩하고 있을게요."
+        }
+      ]
+    },
+    {
+      "emoji": "🤖",
+      "text": "회의 중 갑자기 파이썬의 언어적 특성에 대해 설명하기 시작하는 개발자. 반응해 줄까 말까?",
+      "answers": [
+        {
+          "text": "아 저도 파이썬 배워봤어요.",
+          "result": "개발자가 너무 신나서 파이썬 레퍼런스를 띄우기 시작했다.",
+          "targets": ["pm", "designer"],
+          "burdenAmount": 1
+        },
+        {
+          "text": "그게 p5.js랑 다른 건가요?",
+          "result": "개발자가 p5.js는 라이브러리고 파이썬은 언어라고 하는데 솔직히 이해 못했다.",
+          "targets": ["developer"],
+          "burdenAmount": 1
+        }
+      ]
+    },
+    {
+      "emoji": "💻",
+      "text": "밤샘하는 것도 아닌데 갑자기 대면 팀플이 필요하다고 하는 기획자. 대면 팀플 한 번 할까?",
+      "answers": [
+        {
+          "text": "한번쯤 만나면 좋지.",
+          "result": "팀플 장소에 확진자가 다녀갔다고 해서 모두 선별진료소에 다녀왔다.",
+          "targets": ["designer", "developer"],
+          "burdenAmount": 2
+        },
+        {
+          "text": "대면은 다음에 하죠.",
+          "result": "대면을 해야 기획 리뷰를 개발자가 들어줄 것 같다나 뭐라나.",
+          "targets": ["pm"],
+          "burdenAmount": 1
+        }
+      ]
+    },
+    {
+      "emoji": "🍪",
+      "text": "밤샘 팀플하다가 간식을 사와서 나눠먹기로 했다. 편의점에 간 조장. 어떤 과자를 골라야 할까?",
+      "answers": [
+        {
+          "text": "꼬북칩 콘소메맛",
+          "result": "기획자가 과자 봉지만 물끄러미 보고 있다.",
+          "targets": ["pm"],
+          "burdenAmount": 1
+        },
+        {
+          "text": "꼬북칩 초코츄러스맛",
+          "result": "기획자님 식사 안 하신 거 아니죠?",
+          "targets": ["pm"],
+          "burdenAmount": -2
+        }
+      ]
+    },
+    {
+      "emoji": "✍️",
+      "text": "퍼소나를 한 번 만들어보면 좋겠다는 기획자. 음 하면 좋지만... 우리 결과물에 투머치인 것 같기도 하고.",
+      "answers": [
+        {
+          "text": "기획자님이 한번 만들어 주세요.",
+          "result": "갑자기 기획자가 사용자 조사 계획까지 내놓기 시작했다.",
+          "targets": ["pm"],
+          "burdenAmount": 2
+        },
+        {
+          "text": "다같이 만들어 볼까요?",
+          "result": "개발자만 카메라가 꺼져 있다. 설마 회의 중에 코딩하나?",
+          "targets": ["developer"],
+          "burdenAmount": 1
+        }
+      ]
+    },
+    {
+      "emoji": "😰",
+      "text": "회의 중 갑자기 어딘가에서 물소리가 들려온다. 이건 디자이너에게서 들려오는 소리 같은데...?",
+      "answers": [
+        {
+          "text": "디자이너님 마이크 켜져 있어요.",
+          "result": "아 식사 끝나셨다고.... 그럴 수 있지."
+        },
+        {
+          "text": "무시하고 회의 진행한다.",
+          "result": "설거지 소리가 들려서 결국 마이크 켜져 있다고 얘기했다.",
+          "targets": ["designer"],
+          "burdenAmount": 2
+        }
+      ]
+    },
+    {
+      "emoji": "🍛",
+      "text": "밤샘 팀플하다가 저녁을 시키기로 했다. 배달앱을 켠 조장. 어떤 메뉴를 시켜야 할까?",
+      "answers": [
+        {
+          "text": "마라샹궈",
+          "result": "디자이너가 분모자 다 건져서 먹었다.",
+          "targets": ["designer"],
+          "burdenAmount": -1
+        },
+        {
+          "text": "바지락칼국수",
+          "result": "아 디자이너님 해산물 못 드셨었지. 깜빡했네~",
+          "targets": ["designer"],
+          "burdenAmount": 2
+        }
+      ]
+    },
+    {
+      "emoji": "1️⃣",
+      "text": "결과물 UI를 보고 갑자기 정렬이 맞지 않다고 하는 디자이너. 어디는 7px씩, 어디는 9px씩 띄워야 한다는데...",
+      "answers": [
+        {
+          "text": "제 눈에는 똑같이 생겼는데요?",
+          "result": "그쵸... 똑같죠...? 하지만 디자이너는 의기소침해 보인다.",
+          "targets": ["designer"],
+          "burdenAmount": 2
+        },
+        {
+          "text": "개발자님 이거 대응해 주실 수 있어요?",
+          "result": "개발자님 한숨을 들은 것 같은데... 줌이 끊겼나...",
+          "targets": ["developer"],
+          "burdenAmount": 1
+        }
+      ]
+    }
+  ],
+  "outro": [
+    {
+      "emoji": "🤔",
+      "text": "엔딩 추가해야 함"
+    }
+  ],
+  "pmBadEnding": {
+    "emoji": "🍃",
+    "text": "기획자는 연락이 두절되었고 그 후로 정문과 수업에서 기획자님을 다시 볼 수 없었습니다."
+  },
+  "designerBadEnding": {
+    "emoji": "🍃",
+    "text": "디자이너는 연락이 두절되었고 그 후로 정문과 수업에서 디자이너님을 다시 볼 수 없었습니다."
+  },
+  "developerBadEnding": {
+    "emoji": "🍃",
+    "text": "개발자는 연락이 두절되었고 그 후로 정문과 수업에서 개발자님을 다시 볼 수 없었습니다."
+  }
+}

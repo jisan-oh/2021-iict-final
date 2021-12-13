@@ -1,30 +1,37 @@
-import SituationCard from "./display/components/SituationCard";
 import { ClickableManager } from "./display/base/Clickable";
+import ImageManager from "./display/manager/ImageManager";
+import LayoutManager from "./display/manager/LayoutManager";
+import Game from "./game/Game";
 
-let card: SituationCard;
+function preload() {
+  ImageManager.init();
+}
 
 function setup() {
   createCanvas(800, 600, WEBGL);
-  card = new SituationCard(200, 300);
-  card.hide("TOP", false);
-  card.setRotate(random(-1, 1) * (HALF_PI / 20), false);
-  ClickableManager.add(card);
-  setInterval(() => {
-    card.show();
-    card.flip("LEFT");
-  }, 1000);
+  Game.startIntro();
+  LayoutManager.init();
 }
 
 function draw() {
   background(220);
   ClickableManager.listenHover();
-  card.display();
+  LayoutManager.display();
 }
 
 function mousePressed() {
   ClickableManager.listenClick();
 }
 
+window.preload = preload;
 window.setup = setup;
 window.draw = draw;
 window.mousePressed = mousePressed;
+
+// hot reloading
+
+if (module.hot) {
+  module.hot.accept(() => {
+    setup();
+  });
+}
