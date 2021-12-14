@@ -5,7 +5,9 @@
   "scripts": {
     "prepare": "husky install",
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build --public-url /2021-iict-final",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
     "@typescript-eslint/parser": "^5.6.0",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
+    "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "parcel": "latest",
@@ -27,5 +30,6 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "homepage": "https://jisan-oh.github.io/2021-iict-final"
 }
