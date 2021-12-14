@@ -38,7 +38,10 @@ class Game {
     const main = shuffle(scripts.main);
     if (main.length > 0) {
       const lastQuestion = main[main.length - 1];
-      lastQuestion.preEffects = ["startOutro", "stopCountScore"];
+      main[main.length - 1] = {
+        ...lastQuestion,
+        preEffects: ["startOutro", "stopCountScore"],
+      };
     }
     this.questions = [...this.questions, ...main];
     this.onCardPush();
